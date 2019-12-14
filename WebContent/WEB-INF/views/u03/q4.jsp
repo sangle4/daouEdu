@@ -22,29 +22,44 @@
 					<input type="submit" value="search" class="searchBT" onclick="">
 			</div>
 			<div class = "user_status">
-				<form class="join_form" action="join_process.jsp" method="POST" onsubmit = "return check(this)" style = "height : 400px; text-align : left;">
-					<div class = "join_tag">*ID</div>
+				<form class="insert_form" action="" method="POST" onsubmit = "">
+					고객ID
+					<input type="text" class="input_box" name="cust_id">
+					이름
+					<input type="text" class="input_box" name="cust_name">
+					로그인ID
+					<input type="text" class="input_box" name="login_id">
+					로그인PW
+					<input type="text" class="input_box" name="login_pswd">
+					접속별명
+					<input type="text" class="input_box" name="login_name">
+					성별
+					<input type="text" class="input_box" name="cust_gender_type">
+					고객등급
+					<input type="text" class="input_box" name="cust_grade">
+					
+					<!--
 					<input class = "join_input" name="id" id = "user_selected_id" style = "display : inline-block;">
 					<input type="button" class = "checkBT" value="중복확인" onclick="id_check()">
 					
-					<div class = "join_tag">*PW</div>
+					
 					<input class = "join_input" type="password" name="password" id = "pw1" onkeyup="pwCondition()">
 					<span class = "inner_text" id = "pw1_inner"></span>
-					<div class = "join_tag">*PW verify</div>
+					
 					<input class = "join_input" type="password" name="password" id = "pw2" onkeyup="pwConfirm()">
 					<span class = "inner_text" id = "pw2_inner"></span>
 					
-					<div class = "join_tag">*Name</div>
+					
 					<input class = "join_input" name="name" style = "display : inline-block;">
 					<span class = "inner_text"></span>
-					<div class = "join_tag">&nbsp;Nickname</div>
+					
 					<input class = "join_input" name="nickname" style = "display : inline-block;">
 					<span class = "inner_text"></span>
-					<div class = "join_tag">*Email</div>
+					
 					<input class = "join_input" name="email" style = "display : inline-block;">
 					<span class = "inner_text"></span>
+					 -->
 					
-					<input type="submit" value="회원가입" class="submitBT">
 				</form>
 			</div>
 		</div>
