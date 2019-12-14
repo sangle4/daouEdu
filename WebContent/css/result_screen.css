@@ -1,0 +1,134 @@
+@charset "EUC-KR";
+
+* {
+	font-family: 'Baloo Chettan', cursive;
+	color : #050099;
+}
+
+table {
+	font-family: 'Baloo Chettan', cursive;
+}
+
+th {
+	font-family: 'Baloo Chettan', cursive;
+	color : white;
+}
+
+td {
+	border : 1px solid #E0EFFF;
+	text-align : center;
+	font-family: 'Ubuntu', sans-serif;
+	width : 100px;
+}
+
+.userState {
+	margin : 0px 0px 5px 0px;
+	padding : 5px 5px 0px 5px;
+	width : 255px;
+	height : 22px;
+	text-align : center;
+	font-size : 13px;
+	border-bottom : 1px solid #BEE0FF;
+	color : white;
+	background-color : #1E60B5;
+	font-family: 'Baloo Chettan', cursive;
+}
+
+.tabfont {
+	font-family: 'Baloo Chettan', cursive;
+	color : #1E60B5;
+	margin : 10px;
+	width : 120px;
+	height : 35px;
+	float : left;
+	font-size : 18px;
+}
+
+.loginForm {
+	width : 750px;
+	height : 450px;
+}
+
+.searchform {
+	width : 300px;
+	height : 30px;
+	margin : 10px;
+	border : 1px solid #1E60B5;
+	border-radius : 6px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.result_tab {
+	display: inline-block;
+	width : 750px;
+	border : 1px solid #BEE0FF;
+	margin : 10px 10px 10px 10px;
+	background-color : #F2F8FF;
+}
+
+.userState {
+	margin : 0px;
+	width : 740px;
+	height : 40px;
+	text-align : center;
+	font-size : 25px;
+	border-bottom : 1px solid #BEE0FF;
+	color : white;
+	background-color : #1E60B5;
+}
+
+.dbtable {
+	color : #1E60B5;
+	font-family: 'Baloo Chettan', cursive;
+	font-size : 17px;
+	width : 750px;
+	margin : 0px 10px 0px 10px;
+}
+
+.main_div {
+	margin : 10px;
+}
+
+.closeBT {
+	font-family: 'Baloo Chettan', cursive;
+	width : 120px;
+	height : 35px;
+	margin : 0px;
+	border : 1px solid #1E60B5;
+	border-radius : 6px;
+	background-color : white;
+	color : #1E60B5;
+	float : right;
+	font-size : 20px;
+}
+
+#dbTable:nth-child(even) {
+	background-color : #F2F8FF;
+}
+
+#dbTable:nth-child(odd) {
+	background-color : white;
+}
+
+.user_status {
+	border : 1px solid #1E60B5;
+	margin : 10px;
+}
+
+.searchBT {
+	font-family: 'Baloo Chettan', cursive;
+	width : 120px;
+	height : 35px;
+	margin : 10px;
+	border : 1px solid #1E60B5;
+	border-radius : 6px;
+	background-color : white;
+	color : #1E60B5;
+	float : right;
+	font-size : 20px;
+}
+
+.user_status {
+	
+}
+
