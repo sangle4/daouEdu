@@ -16,10 +16,8 @@
 			<div class="userState">
 				<a style="color : white;">Execution result</a>
 			</div>
-			<div style = "border-bottom : 1px solid #BEE0FF;">
-				<div class="tabfont">Register Customer Info</div>
-				<input name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="searchBT" onclick="">
+			<div style = "border-bottom : 1px solid #BEE0FF; height : 50px;">
+				<div class="tabfont" style="font-size:24px; width:300px;">Register Customer Info</div>
 			</div>
 			<div class = "user_status">
 				<form action="" method="POST" onsubmit = ""> 
@@ -40,7 +38,7 @@
 					</p>
 				</form>
 			</div>
-			
+			<input type="submit" style="margin : 0px 10px 10px 10px;" value="register" class="submitBT" onclick="">
 		</div>
 		<div>
 			<table class = "dbtable" onLoad="" style="width:750px; border: 1px solid #BEE0FF;">

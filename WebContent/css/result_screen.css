@@ -145,6 +145,19 @@ td {
 	font-size : 20px;
 }
 
+.submitBT {
+	font-family: 'Baloo Chettan', cursive;
+	width : 120px;
+	height : 35px;
+	margin : 10px;
+	border : 1px solid #1E60B5;
+	border-radius : 6px;
+	background-color : white;
+	color : #1E60B5;
+	float : right;
+	font-size : 20px;
+}
+
 .user_status {
 	
 }
