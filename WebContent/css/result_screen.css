@@ -5,6 +5,15 @@
 	color : #050099;
 }
 
+p {
+	font-family: 'Ubuntu', sans-serif;
+	margin : 10px;
+}
+
+span {
+	font-family: 'Ubuntu', sans-serif;
+}
+
 table {
 	font-family: 'Baloo Chettan', cursive;
 }
@@ -19,11 +28,6 @@ td {
 	text-align : center;
 	font-family: 'Ubuntu', sans-serif;
 	width : 100px;
-}
-
-.insert_form {
-	text-align : left;
-	font-family: 'Ubuntu', sans-serif;
 }
 
 .input_box {
