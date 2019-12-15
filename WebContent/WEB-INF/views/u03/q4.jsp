@@ -22,7 +22,7 @@
 				<input type="submit" value="search" class="searchBT" onclick="">
 			</div>
 			<div class = "user_status">
-				<form action="" method="POST" onsubmit = "">
+				<form action="" method="POST" onsubmit = ""> 
 					<p>
 						고객ID&emsp;<input type="text" class="input_box" name="cust_id">
 						<span style="float : right;">이름<input type="text" class="input_box" name="cust_name"></span>
@@ -32,11 +32,11 @@
 						<span style="float : right;">로그인PW<input type="text" class="input_box" name="login_pswd"></span>
 					</p>
 					<p>
-						접속별명<input type="text" class="input_box" name="login_name">
+						접속별명<input type="text" class="input_box" name="login_name"> 
 						<span style="float : right;">성별<input type="text" class="input_box" name="cust_gender_type"></span>
 					</p>
 					<p>
-					고객등급<input type="text" class="input_box" name="cust_grade">
+					고객등급<input type="text" class="input_box" name="cust_grade"> 
 					</p>
 				</form>
 			</div>

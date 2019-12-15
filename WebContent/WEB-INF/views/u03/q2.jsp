@@ -19,7 +19,7 @@
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
 				<input name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="searchBT" onclick="">
+				<input type="submit" value="search" class="searchBT" onclick=""> 
 			</div>	
 		</div>
 		<div>
