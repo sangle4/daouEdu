@@ -73,7 +73,7 @@ public class Comm_hd extends FW_struct {
 		sb.append(fs.format("9", LEN_ERRNO,       Integer.toString(errno)));
 		
 
-		return (sb.toString());
+		return (sb.toString()); //입력데이터로 변환
 	}
 
 	@Override

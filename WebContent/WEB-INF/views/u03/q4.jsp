@@ -42,12 +42,16 @@
 		<!-- 고객 정보 수정 / 삭제 -->
 		<div class="result_tab">
 			<div style = "background-color : #1E60B5;border-bottom : 1px solid #BEE0FF; height : 50px;">
-				<div class="tabfont" style="color : white; font-size:24px; width:300px;">Register Customer Info</div>
+				<div class="tabfont" style="color : white; font-size:24px; width:400px;">Modify / Delete Customer Info</div>
 			</div>
 			<div class = "user_status">
-				<form action="" method="POST" onsubmit = ""> 
+			<div style = "border-bottom : 1px solid #BEE0FF;">
+				<div class="tabfont" style = "width : 130px;font-size : 22px;">Customer ID</div>
+				<input name="userid" class="searchform" id = "idField">
+				<input type="submit" value="search" class="submitBT" onclick=""> 
+			</div>
 					<p>
-						고객ID&emsp;<input type="text" class="input_box" name="cust_id">
+						고객ID&emsp;<input style = "background-color : #F2F8FF" type="text" class="input_box" name="cust_id" readonly="readonly">
 						<span style="float : right;">이름<input type="text" class="input_box" name="cust_name"></span>
 					</p>
 					<p>
@@ -63,7 +67,8 @@
 					</p>
 				</form>
 			</div>
-			<input type="submit" style="margin : 0px 10px 10px 10px;" value="register" class="submitBT" onclick="">
+			<input type="submit" style="color : white; background-color : #1E60B5; margin : 0px 10px 10px 10px;" value="Delete" class="submitBT" onclick="">
+			<input type="submit" style="margin : 0px 10px 10px 10px;" value="Modify" class="submitBT" onclick="">
 		</div>
 		
 		<div style="width : 450px; height : 35px;">

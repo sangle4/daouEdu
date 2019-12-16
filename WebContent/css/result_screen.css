@@ -67,7 +67,7 @@ td {
 }
 
 .searchform {
-	width : 300px;
+	width : 175px;
 	height : 30px;
 	margin : 10px;
 	border : 1px solid #1E60B5;
@@ -119,30 +119,18 @@ td {
 	font-size : 20px;
 }
 
-#dbTable:nth-child(even) {
-	background-color : #F2F8FF;
+tr:nth-child(odd) {
+	background-color: #F2F8FF;
 }
 
-#dbTable:nth-child(odd) {
-	background-color : white;
+tr:nth-child(even) {
+	background-color: white;
 }
+
 
 .user_status {
 	border : 1px solid #1E60B5;
 	margin : 10px;
-}
-
-.searchBT {
-	font-family: 'Baloo Chettan', cursive;
-	width : 120px;
-	height : 35px;
-	margin : 10px;
-	border : 1px solid #1E60B5;
-	border-radius : 6px;
-	background-color : white;
-	color : #1E60B5;
-	float : right;
-	font-size : 20px;
 }
 
 .submitBT {

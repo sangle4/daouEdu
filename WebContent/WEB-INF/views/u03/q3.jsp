@@ -19,7 +19,7 @@
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
 				<input name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="searchBT" onclick=""> 
+				<input type="submit" value="search" class="submitBT" onclick=""> 
 			</div>
 			<div class = "user_status">
 				<table class = "status_table" onLoad="" style="width:100%;">
@@ -104,11 +104,11 @@
         			-->
 				</tbody>
 				<tfoot>
-					<!-- <input type="submit" value="search" class="searchBT" onclick=""> -->
+					<!-- <input type="submit" value="search" class="submitBT" onclick=""> -->
 				</tfoot>
 			</table>
 			<div style="height : 50px;">
-				<input type="submit" value="20 more" class="searchBT" onclick="">
+				<input type="submit" value="20 more" class="submitBT" onclick="">
 			</div>
 		</div>
 		<div style="width : 450px; height : 35px;">
