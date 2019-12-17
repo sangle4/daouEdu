@@ -10,6 +10,58 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
 </head>
+
+<script>
+
+$(document).ready(function() {
+	
+	$('#btn').on("click", function() {
+		var custId = $('#idField').val(); 
+		
+		var obj = JSON.parse('{"g1": [{"고객ID": 1234, "고객이름": "홍길동", "로그인ID": "daou2019",  "고객등급": "gold"}, {"고객ID": 1235, "고객이름": "홍길동2", "로그인ID": "daou2020",  "고객등급": "gold"}, {"고객ID": 1236, "고객이름": "홍길동3", "로그인ID": "daou2021",  "고객등급": "silver"}, {"고객ID": 1237, "고객이름": "홍길동4", "로그인ID": "daou2022",  "고객등급": "gold"}, {"고객ID": 1238, "고객이름": "홍길동5", "로그인ID": "daou2023",  "고객등급": "gold"}]}');
+		//alert(obj.g1.length);
+		//alert(obj.g1[4].고객ID);
+		
+		var inner = "";
+		for(var i = 0; i < obj.g1.length; i++){
+			inner += '<tr id="dbTR">';
+			inner += '<td>' + obj.g1[i].고객ID + '</td>';
+			inner += '<td>' + obj.g1[i].고객이름 + '</td>';
+			inner += '<td>' + obj.g1[i].로그인ID + '</td>';
+			inner += '<td>' + obj.g1[i].고객등급 + '</td></tr>';
+		}
+		tableBody.innerHTML = inner;
+		//alert(arr);
+	})
+	
+	function sendID() {
+		var datalist = new Array;
+		var input = $('#idField').val();
+		var data = new Object();
+		
+		data.id = input;
+		datalist.push(data);
+		
+		var jsonData = JSON.stringify(data);
+		
+		var urlText = "http://localhost:8080/com/intern/u03/q1";
+		
+		$.ajax({
+			async : true,
+			type : "POST",
+			contentType : "application/json; charset=UTF-8",
+			url : urlText,
+			data : jsonData,
+			success : function(dat) {
+				var idx = dat.lastIndexOf('}');
+				
+			}
+		});
+	}
+})
+
+</script>
+
 <body>
 	<div class="main_div">
 		<div class="result_tab">
@@ -19,7 +71,7 @@
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
 				<input name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="submitBT" onclick=""> 
+				<input type="submit" value="search" class="submitBT" id="btn" onclick=""> 
 			</div>	
 		</div>
 		<div>
@@ -32,7 +84,7 @@
 						<th>Grade</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id = "tableBody">
 					<tr id="dbTR">
 						<td>-</td>
 						<td>-</td>
@@ -60,16 +112,7 @@
 						<td>-</td>
 						<td>-</td>
 						
-					</tr>	
-					<!-- 
-        				<tr>
-            				<th>추가</th>
-            				<td></td> 
-            				<td></td> 
-            				<td></td> 
-            				<td></td> 
-        				</tr>
-        			-->
+					</tr>
 				</tbody>
 				<tfoot>
 					<!-- <input type="submit" value="search" class="submitBT" onclick=""> -->

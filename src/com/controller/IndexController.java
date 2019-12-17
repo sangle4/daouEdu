@@ -30,7 +30,7 @@ public class IndexController {
 		return ""+stdId+"/"+qNo;
 	}
 	
-	@RequestMapping(value="/com/intern/{stdId}/{qNo}", method = RequestMethod.POST)
+	@RequestMapping(value="/com/intern/{stdId}/{qNo}", method = RequestMethod.POST, produces="application/text; charset=UTF-8")
 	@ResponseBody
 	public String internCommApi1(@RequestBody String inputData,
 			HttpServletRequest httpServletRequest, HttpServletResponse response
