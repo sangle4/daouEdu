@@ -30,6 +30,14 @@ td {
 	width : 100px;
 }
 
+tr:nth-child(odd) {
+	background-color: #F2F8FF;
+}
+
+tr:nth-child(even) {
+	background-color: white;
+}
+
 .input_box {
 	width : 250px;
 	height : 30px;
@@ -76,6 +84,10 @@ td {
 	text-align : center;
 }
 
+.searchform:hover {
+	border : 1px solid blue;
+}
+
 .result_tab {
 	display: inline-block;
 	width : 750px;
@@ -106,15 +118,6 @@ td {
 .main_div {
 	margin : 10px;
 }
-
-tr:nth-child(odd) {
-	background-color: #F2F8FF;
-}
-
-tr:nth-child(even) {
-	background-color: white;
-}
-
 
 .user_status {
 	border : 1px solid #1E60B5;
