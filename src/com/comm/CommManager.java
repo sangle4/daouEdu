@@ -73,7 +73,7 @@ public class CommManager {
 				return -1;
 			}
 			
-			data_len = comm_hd.getSize()+10 - Comm_hd.Length; // 공통 헤더 + data 길이 셋
+			data_len = comm_hd.getSize() - Comm_hd.Length; // 공통 헤더 + data 길이 셋
 			
 			if (session.recvSize(output, 0, data_len) < 0) {
 				return -1;

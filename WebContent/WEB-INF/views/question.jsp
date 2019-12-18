@@ -129,7 +129,7 @@
 							<h2>EXECUTE1</h2>
 							<!-- <a href="#" data-toggle="modal" data-target="#Modal-1" id="openMD-1" class="modalClk">View
 							more</a> -->
-							<a href="http://192.168.0.94:8080/result/${stdid}/q1" class="modalClk"
+							<a href="http://localhost:8080/result/${stdid}/q1" class="modalClk"
 								onclick="window.open(this.href, '_black', 
 								'width=800px,height=600px,toolbars=no, scrollbar=yes'); return false;" )></a>
 						</figcaption> 
@@ -144,7 +144,7 @@
 						src="../resource/images/demo/portfolio-10.JPG" alt="img02"
 						class="img-responsive" /> <figcaption>
 							<h2>EXECUTE</h2>
-					<a href="http://192.168.0.94:8080/result/${stdid}/q2" class="modalClk"
+					<a href="http://localhost:8080/result/${stdid}/q2" class="modalClk"
 								onclick="window.open(this.href, '_black', 
 								'width=800px,height=600px,toolbars=no, scrollbar=yes'); return false;" )></a> </figcaption> </figure>
 				</div>
@@ -157,7 +157,7 @@
 						src="../resource/images/demo/portfolio-10.JPG" alt="img02"
 						class="img-responsive" /> <figcaption>
 							<h2>EXECUTE</h2>
-					<a href="http://192.168.0.94:8080/result/${stdid}/q3" class="modalClk"
+					<a href="http://localhost:8080/result/${stdid}/q3" class="modalClk"
 								onclick="window.open(this.href, '_black', 
 								'width=800px,height=600px,toolbars=no, scrollbar=yes'); return false;" )></a> </figcaption> </figure>
 				</div>
@@ -216,7 +216,7 @@
 						src="../resource/images/demo/portfolio-10.JPG" alt="img02"
 						class="img-responsive" /> <figcaption>
 							<h2>EXECUTE</h2>
-					<a href="http://192.168.0.94:8080/result/${stdid}/q4" class="modalClk"
+					<a href="http://localhost:8080/result/${stdid}/q4" class="modalClk"
 								onclick="window.open(this.href, '_black', 
 								'width=800px,height=600px,toolbars=no, scrollbar=yes'); return false;" )></a> </figcaption> </figure>
 				</div>
@@ -229,7 +229,7 @@
 						src="../resource/images/demo/portfolio-10.JPG" alt="img02"
 						class="img-responsive" /> <figcaption>
 							<h2>EXECUTE</h2>
-					<a href="http://192.168.0.94:8080/result/${stdid}/q5" class="modalClk"
+					<a href="http://localhost:8080/result/${stdid}/q5" class="modalClk"
 								onclick="window.open(this.href, '_black', 
 								'width=800px,height=600px,toolbars=no, scrollbar=yes'); return false;" )></a> </figcaption> </figure>
 				</div>
@@ -242,7 +242,7 @@
 						src="../resource/images/demo/portfolio-10.JPG" alt="img02"
 						class="img-responsive" /> <figcaption>
 							<h2>EXECUTE</h2>
-					<a href="http://192.168.0.94:8080/result/${stdid}/q6" class="modalClk"
+					<a href="http://localhost:8080/result/${stdid}/q6" class="modalClk"
 								onclick="window.open(this.href, '_black', 
 								'width=800px,height=600px,toolbars=no, scrollbar=yes'); return false;" )></a> </figcaption> </figure>
 				</div>

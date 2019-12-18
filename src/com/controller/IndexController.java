@@ -37,6 +37,7 @@ public class IndexController {
 			,@PathVariable("stdId") String stdId,@PathVariable("qNo") String qNo){
 		
 		ApiCommCall ac = new ApiCommCall();
+		ac.setApiName(qNo);
 		ac.call(inputData);
 		ret=ac.getOutputJsonStr();
 

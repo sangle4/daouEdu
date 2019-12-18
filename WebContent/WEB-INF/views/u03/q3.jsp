@@ -18,7 +18,7 @@
 			</div>
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
-				<input name="userid" class="searchform" id = "idField">
+				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="userid" class="searchform" id = "idField">
 				<input type="submit" value="search" class="submitBT" onclick=""> 
 			</div>
 			<div class = "user_status">
