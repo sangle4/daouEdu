@@ -19,21 +19,21 @@
 				<div class="tabfont" style="color : white; font-size:24px; width:300px;">Register Customer Info</div>
 			</div>
 			<div class = "user_status">
-				<form action="queryEvent.js" method="POST"> 
+				<form action="" method="POST"> 
 					<p>
-						고객ID&emsp;<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" type="text" class="input_box" name="cust_id1">
-						<span style="float : right;">이름<input type="text" class="input_box" name="cust_name1"></span>
+						고객ID&emsp;<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" type="text" class="input_box" id="cust_id1">
+						<span style="float : right;">이름<input type="text" class="input_box" id="cust_name1"></span>
 					</p>
 					<p>
-						로그인ID<input type="text" class="input_box" name="login_id1">
-						<span style="float : right;">로그인PW<input type="text" class="input_box" name="login_pswd1"></span>
+						로그인ID<input type="text" class="input_box" id="login_id1">
+						<span style="float : right;">로그인PW<input type="text" class="input_box" id="login_pswd1"></span>
 					</p>
 					<p>
-						접속별명<input type="text" class="input_box" name="login_name1"> 
-						<span style="float : right;">성별<input type="text" class="input_box" name="cust_gender_type1"></span>
+						접속별명<input type="text" class="input_box" id="login_name1"> 
+						<span style="float : right;">성별<input type="text" class="input_box" id="cust_gender_type1"></span>
 					</p>
 					<p>
-					고객등급<input type="text" class="input_box" name="cust_grade1"> 
+					고객등급<input type="text" class="input_box" id="cust_grade1"> 
 					</p>
 				</form>
 			</div>

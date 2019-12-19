@@ -31,7 +31,7 @@ var index = 0; //more 버튼 클릭 횟수
 			</div>
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div style = "margin : 0px 10px 10px 10px;" class="tabfont">Date</div>
-				<input id = "dateField" style = "margin : 0px 10px 10px 10px;" type="date" value = '2011-09-16' name="userid" class="searchform">
+				<input type="date" id = "dateField" style = "margin : 0px 10px 10px 10px;" value = '2011-09-16' name="userid" class="searchform">
 			</div>
 			<div class = "user_status">
 				<table class = "status_table" onLoad="" style="width:100%;">

@@ -110,6 +110,7 @@ function q4func() {
 		success : function(dat) {
 			var idx = dat.lastIndexOf('}');
 			var obj = JSON.parse(dat);
+			console.log(obj);
 			$("#cust_id2").val(obj.cust_id);
 			$("#cust_name2").val(obj.cust_name);
 			$("#login_id2").val(obj.login_id);
@@ -258,11 +259,12 @@ function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
 		data.cust_gender_type = $('#cust_gender_type' + signal).val();
 		data.cust_grade = $('#cust_grade' + signal).val();
 	}
+	//console.log(data);
 	var jsonData = JSON.stringify(data);
 	
 	var urlText = "http://localhost:8080/com/intern/u03/tr4";
 	
-	alert(data.type_num + " / " + data.cust_id);
+	//alert(data.type_num + " / " + data.cust_id);
 	
 	$.ajax({
 		async : true,
@@ -272,7 +274,7 @@ function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
 		data : jsonData,
 		success : function(dat) {
 			//alert("success!");
-			return 0;
+			
 			
 			
 			var idx = dat.lastIndexOf('}');
