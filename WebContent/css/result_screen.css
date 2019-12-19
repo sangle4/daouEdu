@@ -44,6 +44,8 @@ tr:nth-child(even) {
 	margin : 10px;
 	border : 1px solid #1E60B5;
 	border-radius : 6px;
+	text-align : center;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .userState {
