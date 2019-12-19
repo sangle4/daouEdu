@@ -13,42 +13,7 @@
 </head>
 
 <script>
-function sendID() {
-	if($('#idField').val() > 200000 || $('#idField').val() == ""){
-		alert("200000 이하 숫자만 가능합니다.");
-		$('#idField').val("");
-		return 0;
-	}
-	var input = $('#idField').val();
-	var data = new Object();
-	
-	data.cust_id = input; //key로 똑같이 치환, input 넣을 때 사용
-	
-	var jsonData = JSON.stringify(data);
-	
-	var urlText = "http://localhost:8080/com/intern/u03/tr1";
-	
-	$.ajax({
-		async : true,
-		type : "POST",
-		contentType : "application/json; charset=UTF-8",
-		url : urlText,
-		data : jsonData,
-		success : function(dat) {
-			var idx = dat.lastIndexOf('}');
-			var obj = JSON.parse(dat);
-			//alert("불러오기 성공!");
-			//alert(obj);
-			$("#cust_id").html(obj.cust_id);
-			$("#cust_name").html(obj.cust_name);
-			$("#login_id").html(obj.login_id);
-			$("#login_pw").html(obj.login_pswd);
-			$("#nickname").html(obj.login_name);
-			$("#gender").html(obj.cust_gender_type);
-			$("#grade").html(obj.cust_grade);
-		}
-	});
-}
+
 
 $(document).ready(function() {
 	$('#btn').on("click", function() {
@@ -67,7 +32,7 @@ $(document).ready(function() {
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
 				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="submitBT" id = "" onclick="sendID()"> 
+				<input type="submit" value="search" class="submitBT" id = "" onclick="q1func()"> 
 			</div>
 			<div class = "user_status">
 				<table class = "status_table" onLoad="" style="width:100%;">
@@ -99,6 +64,7 @@ $(document).ready(function() {
 						<td></td>
 						<td></td>
 					</tr>
+				</tbody>
 				</table>
 			</div>
 		</div>

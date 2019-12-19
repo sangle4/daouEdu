@@ -8,72 +8,17 @@
 <link rel="stylesheet" type="text/css" href="../../css/result_screen.css">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Ubuntu&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../js/queryEvent.js"></script> <!-- 액션 js파일  -->
 <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
 </head>
 
 <script>
 var index = 0; //more 버튼 클릭 횟수
 
-function sendID() {
-	if($('#idField').val() > 200000 || $('#idField').val() == ""){
-		alert("200000 이하 숫자만 가능합니다.");
-		$('#idField').val("");
-		return 0;
-	}
-	var input = $('#idField').val(); //입력 필드 데이터를 불러옴
-	if(index == 0) {//처음 호출 시 인덱스 그대로 입력
-		index = input;
-		$('#first').val(input); //검색 데이터 저장 공간에 저장
-	}
-	else
-		index = $('#index').val(); //호출한 내역이 존재 시 hidden input에 있는 데이터를 저장
-	
-	var data = new Object();
-	
-	if(input != $('#first').val()){ //검색한 데이터와 다른 데이터 검색 시
-		index = 0; //인덱스를 초기화하고 함수 다시 실행
-		sendID();
-	}
-	else{ //이어서 요청하는 경우
-		data.cust_id = index; //key로 똑같이 치환, input 넣을 때 사용
-		
-		var jsonData = JSON.stringify(data);
-		
-		var urlText = "http://localhost:8080/com/intern/u03/tr2";
-		
-		$.ajax({
-			async : true,
-			type : "POST",
-			contentType : "application/json; charset=UTF-8",
-			url : urlText,
-			data : jsonData,
-			success : function(dat) {
-				var idx = dat.lastIndexOf('}');
-				var obj = JSON.parse(dat);
-				
-				var inner;
-				if(index == input) //첫 데이터 반환 시 html을 초기화
-					inner = "";
-				else
-					inner = tableBody.innerHTML; //데이터를 이어서 붙이는 경우 안의 데이터를 미리 받아서 저장
-				
-				for(var i = 0; i < obj.arr.length; i++){ //데이터를 덧붙여준다
-					inner += '<tr id="dbTR">';
-					inner += '<td>' + obj.arr[i].cust_id + '</td>';
-					inner += '<td>' + obj.arr[i].cust_name+ '</td>';
-					inner += '<td>' + obj.arr[i].login_id + '</td>';
-					inner += '<td>' + obj.arr[i].cust_grade + '</td></tr>';
-				}
-				tableBody.innerHTML = inner;
-				index = Number(index) + Number(obj.arr.length);
-				$("#index").val(index);
-			}
-		});
-	}
-}
+
 
 function additional() {
-	sendID();
+	q2func();
 }
 
 $(document).ready(function() {
@@ -95,11 +40,11 @@ $(document).ready(function() {
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
 				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="submitBT" id="" onclick="sendID()"> 
+				<input type="submit" value="search" class="submitBT" id="" onclick="q2func()"> 
 			</div>	
 		</div>
 		<div>
-			<table class = "dbtable" onLoad="" style="width:750px; border: 1px solid #BEE0FF;">
+			<table class = "dbtable" onLoad="" style="width:750px; border: 1px solid #1E60B5;">
 				<thead>
 					<tr id="dbTR" style="background-color: #1E60B5">
 						<th>Cust_id</th>

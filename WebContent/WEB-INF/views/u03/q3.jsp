@@ -8,9 +8,94 @@
 <link rel="stylesheet" type="text/css" href="../../css/result_screen.css">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Ubuntu&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../js/queryEvent.js"></script> <!-- 액션 js파일  -->
 <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
 </head>
+
+<script>
+
+var index = 0; //more 버튼 클릭 횟수
+
+/*
+function q2func() {
+	if($('#idField').val() > 200000 || $('#idField').val() == ""){
+		alert("200000 이하 숫자만 가능합니다.");
+		$('#idField').val("");
+		return 0;
+	}
+	var input = $('#idField').val(); //입력 필드 데이터를 불러옴
+	if(Number(index) == 0) {//처음 호출 시 인덱스 그대로 입력
+		index = input;
+		$('#first').val(input); //검색 데이터 저장 공간에 저장
+	}
+	else
+		index = $('#index').val(); //호출한 내역이 존재 시 hidden input에 있는 데이터를 저장
+	
+	var data = new Object();
+	
+	if(input != $('#first').val()){ //검색한 데이터와 다른 데이터 검색 시
+		index = 0; //인덱스를 초기화하고 함수 다시 실행
+		q3func();
+		//alert("74줄 if문의 index : " + index);
+	}
+	else{ //이어서 요청하는 경우
+		$('#index').val(index);
+		data.cust_id = $('#index').val(); //key로 똑같이 치환, input 넣을 때 사용
+		//alert("78줄 else문의 index : " + index + "\nfirst val :" + $('#first').val());
+		var jsonData = JSON.stringify(data);
+		
+		var urlText = "http://localhost:8080/com/intern/u03/tr2";
+		
+		$.ajax({
+			async : true,
+			type : "POST",
+			contentType : "application/json; charset=UTF-8",
+			url : urlText,
+			data : jsonData,
+			success : function(dat) {
+				var idx = dat.lastIndexOf('}');
+				var obj = JSON.parse(dat);
+				
+				var inner;
+				if(index == input) //첫 데이터 반환 시 html을 초기화
+					inner = "";
+				else
+					inner = tableBody.innerHTML; //데이터를 이어서 붙이는 경우 안의 데이터를 미리 받아서 저장
+				
+				for(var i = 0; i < obj.arr.length; i++){ //데이터를 덧붙여준다
+					inner += '<tr id="dbTR">';
+					inner += '<td>' + obj.arr[i].cust_id + '</td>';
+					inner += '<td>' + obj.arr[i].cust_name+ '</td>';
+					inner += '<td>' + obj.arr[i].login_id + '</td>';
+					inner += '<td>' + obj.arr[i].cust_grade + '</td></tr>';
+				}
+				tableBody.innerHTML = inner;
+				index = Number(index) + Number(obj.arr.length);
+				$("#index").val(index);
+			}
+		});
+	}
+}
+*/
+
+function additional() {
+	q2func();
+}
+
+
+$(document).ready(function() {
+	//$('#index').val(0);
+	//$('#first').val(0);
+	$('#btn').on("click", function() {
+		
+	});
+})
+
+
+</script>
 <body>
+	<input type="hidden" id="index" value="0">
+	<input type="hidden" id="first" value="0">
 	<div class="main_div">
 		<div class="result_tab">
 			<div class="userState">
@@ -19,38 +104,39 @@
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
 				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="submitBT" onclick=""> 
+				<input type="submit" value="search" class="submitBT" onclick="q3func()" id = ""> 
 			</div>
 			<div class = "user_status">
 				<table class = "status_table" onLoad="" style="width:100%;">
 				<tbody>
 					<tr id="dbTR">
 						<td>고객ID</td>
-						<td></td>
+						<td id="cust_id"></td>
 						<td>이름</td>
-						<td></td>
+						<td id="cust_name"></td>
 						
 					</tr>
 					<tr id="dbTR">
 						<td>로그인ID</td>
-						<td></td>
+						<td id="login_id"></td>
 						<td>로그인비밀번호</td>
-						<td></td>
+						<td id="login_pw"></td>
 						
 					</tr>
 					<tr id="dbTR">
 						<td>접속별명</td>
-						<td></td>
+						<td id="nickname"></td>
 						<td>성별</td>
-						<td></td>
+						<td id="gender"></td>
 						
 					</tr>
 					<tr id="dbTR">
 						<td>고객등급</td>
-						<td></td>
+						<td id="grade"></td>
 						<td></td>
 						<td></td>
 					</tr>
+				</tbody>
 				</table>
 			</div>
 		</div>
@@ -64,51 +150,22 @@
 						<th>Grade</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id = "tableBody">
+					<% for(int i = 0; i < 4; i++) { %>
 					<tr id="dbTR">
 						<td>-</td>
 						<td>-</td>
 						<td>-</td>
 						<td>-</td>
-						
 					</tr>
-					<tr id="dbTR">
-						<td>-</td>
-						<td>-</td>
-						<td>-</td>
-						<td>-</td>
-						
-					</tr>
-					<tr id="dbTR">
-						<td>-</td>
-						<td>-</td>
-						<td>-</td>
-						<td>-</td>
-						
-					</tr>
-					<tr id="dbTR">
-						<td>-</td>
-						<td>-</td>
-						<td>-</td>
-						<td>-</td>
-						
-					</tr>	
-					<!-- 
-        				<tr>
-            				<th>추가</th>
-            				<td></td> 
-            				<td></td> 
-            				<td></td> 
-            				<td></td> 
-        				</tr>
-        			-->
+					<% } %>
 				</tbody>
 				<tfoot>
 					<!-- <input type="submit" value="search" class="submitBT" onclick=""> -->
 				</tfoot>
 			</table>
 			<div style="height : 50px;">
-				<input type="submit" value="20 more" class="submitBT" onclick="">
+				<input type="submit" value="20 more" class="submitBT" onclick="additional()">
 			</div>
 		</div>
 		<div style="width : 450px; height : 35px;">

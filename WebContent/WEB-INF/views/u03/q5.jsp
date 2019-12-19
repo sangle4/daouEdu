@@ -8,13 +8,35 @@
 <link rel="stylesheet" type="text/css" href="../../css/result_screen.css">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Ubuntu&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../js/queryEvent.js"></script> <!-- 액션 js파일  -->
 <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
 </head>
+
+<script>
+var index = 0;
+
+
+</script>
+
 <body>
+	<input type="hidden" id="index" value="0">
+	<input type="hidden" id="first" value="0">
 	<div class="main_div">
+		<div class="result_tab">
+			<div class="userState">
+				<a style="color : white;">Execution result</a>
+			</div>
+			<div style = "border-bottom : 1px solid #BEE0FF;">
+				<div class="tabfont">Customer ID</div>
+				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="userid" class="searchform" id = "idField">
+				<input type="submit" value="search" class="submitBT" onclick="q5func()" id = ""> 
+			</div>
+		</div>
+		<!-- 
 		<div style="width : 465px; height : 45px;">
 			<input type="submit" style="margin : 10px; float : right;" value="View" class="submitBT" onclick="">
 		</div>
+		 -->
 		<div>
 			<table class = "dbtable" onLoad="" style="width:750px; border: 1px solid #1E60B5;">
 				<thead>
@@ -25,7 +47,7 @@
 						<th>Orders</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id = "tableBody">
 					<tr id="dbTR">
 						<td>-</td>
 						<td>-</td>
@@ -69,7 +91,7 @@
 				</tfoot>
 			</table>
 			<div style="height : 50px;">
-				<input type="submit" value="20 more" class="submitBT" onclick="">
+				<input type="submit" value="20 more" class="submitBT" onclick="q5func()">
 			</div>
 		</div>
 		<div style="width : 450px; height : 35px;">
