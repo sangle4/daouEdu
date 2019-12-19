@@ -25,6 +25,11 @@ function q1func() {
 			$("#nickname").html(obj.login_name);
 			$("#gender").html(obj.cust_gender_type);
 			$("#grade").html(obj.cust_grade);
+			if(obj.err_code != 0) {
+				$("#cust_id").html("");
+				alert("데이터 조회에 실패하였습니다.");
+				$("#idField").val("");
+			}
 		}
 	});
 }
