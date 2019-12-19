@@ -12,3 +12,5 @@ err_code - success : 0
 err_msg : "message"
 
 if input more than 200,000 need to fix error
+
+q6 : send order_id to click action '20more'
