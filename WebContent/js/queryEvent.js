@@ -48,7 +48,6 @@ function q2func() {
 	else{ //이어서 요청하는 경우
 		$('#index').val(index);
 		data.cust_id = $('#index').val(); //key로 똑같이 치환, input 넣을 때 사용
-		//alert("78줄 else문의 index : " + index + "\nfirst val :" + $('#first').val());
 		var jsonData = JSON.stringify(data);
 		
 		var urlText = "http://localhost:8080/com/intern/u03/tr2";
@@ -259,12 +258,9 @@ function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
 		data.cust_gender_type = $('#cust_gender_type' + signal).val();
 		data.cust_grade = $('#cust_grade' + signal).val();
 	}
-	//console.log(data);
 	var jsonData = JSON.stringify(data);
 	
 	var urlText = "http://localhost:8080/com/intern/u03/tr4";
-	
-	//alert(data.type_num + " / " + data.cust_id);
 	
 	$.ajax({
 		async : true,
@@ -273,32 +269,9 @@ function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
 		url : urlText,
 		data : jsonData,
 		success : function(dat) {
-			//alert("success!");
-			
-			
-			
 			var idx = dat.lastIndexOf('}');
 			var obj = JSON.parse(dat);
 			console.log(obj);
-			
-			/*
-			var inner;
-			if(index == input) //첫 데이터 반환 시 html을 초기화
-				inner = "";
-			else
-				inner = tableBody.innerHTML; //데이터를 이어서 붙이는 경우 안의 데이터를 미리 받아서 저장
-			
-			for(var i = 0; i < obj.arr.length; i++){ //데이터를 덧붙여준다
-				inner += '<tr id="dbTR">';
-				inner += '<td>' + obj.arr[i].order_id + '</td>';
-				inner += '<td>' + obj.arr[i].order_dt + '</td>';
-				inner += '<td>' + obj.arr[i].order_channel_type + '</td>';
-				inner += '<td>' + obj.arr[i].order_status + '</td></tr>';
-			}
-			tableBody.innerHTML = inner;
-			index = Number(index) + Number(obj.arr.length);
-			$("#index").val(index);
-			*/
 		}
 	});
 }
