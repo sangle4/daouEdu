@@ -73,7 +73,7 @@ var index = 0; //more 버튼 클릭 횟수
 				</tbody>
 			</table>
 			<div style="height : 50px;">
-				<input type="submit" value="20 more" class="submitBT" onclick="">
+				<input type="submit" value="20 more" class="submitBT" onclick="q6func()">
 			</div>
 		</div>
 		<div style="width : 450px; height : 35px;">

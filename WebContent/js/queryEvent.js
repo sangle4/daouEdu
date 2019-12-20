@@ -79,6 +79,8 @@ function q2func() {
 						alert("조회할 데이터가 없습니다.");
 					return 0;
 				}
+				else
+					alert(obj.arr.length + "건이 조회되었습니다.");
 				var inner;
 				if(index == input) //첫 데이터 반환 시 html을 초기화
 					inner = "";
@@ -194,6 +196,12 @@ function q5func() {
 				var obj = JSON.parse(dat);
 				console.log(obj);
 				
+				if(obj.arr.length == 0) {
+					alert("조회할 데이터가 없습니다.");
+					return 0;
+				}
+				else
+					alert(obj.arr.length + "건이 조회되었습니다.");
 				var inner;
 				if(index == input) //첫 데이터 반환 시 html을 초기화
 					inner = "";
@@ -258,7 +266,18 @@ function q6func() {
 				var idx = dat.lastIndexOf('}');
 				var obj = JSON.parse(dat);
 				console.log(obj);
-				
+				if(obj.arr.length == 0) {
+					alert("조회할 주문내역 데이터가 없습니다.");
+					
+					var inner = "";
+					for(var i = 0; i < 4; i++) //테이블 초기화
+						inner += '<tr id="dbTR"><td>-</td><td>-</td><td>-</td><td>-</td></tr>';
+					
+					tableBody.innerHTML = inner;
+					return 0;
+				}
+				else
+					alert(obj.arr.length + "건이 조회되었습니다.");
 				var inner;
 				if(index == input) //첫 데이터 반환 시 html을 초기화
 					inner = "";
