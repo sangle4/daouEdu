@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Q2</title>
 <link rel="stylesheet" type="text/css" href="../../css/result_screen.css">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Ubuntu&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -14,19 +14,6 @@
 
 <script>
 var index = 0; //more 버튼 클릭 횟수
-
-
-
-function additional() {
-	q2func();
-}
-
-$(document).ready(function() {
-	$('#btn').on("click", function() {
-		
-	});
-})
-
 </script>
 
 <body>
@@ -39,12 +26,12 @@ $(document).ready(function() {
 			</div>
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont">Customer ID</div>
-				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="userid" class="searchform" id = "idField">
-				<input type="submit" value="search" class="submitBT" id="" onclick="q2func()"> 
+				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" class="searchform" id = "idField">
+				<input type="submit" value="search" class="submitBT" onclick="q2func()"> 
 			</div>	
 		</div>
 		<div>
-			<table class = "dbtable" onLoad="" style="width:750px; border: 1px solid #1E60B5;">
+			<table class = "dbtable" style="width:750px; border: 1px solid #1E60B5;">
 				<thead>
 					<tr id="dbTR" style="background-color: #1E60B5">
 						<th>Cust_id</th>
@@ -63,12 +50,9 @@ $(document).ready(function() {
 					</tr>
 					<% } %>
 				</tbody>
-				<tfoot>
-					<!-- <input type="submit" value="search" class="submitBT" onclick=""> -->
-				</tfoot>
 			</table>
 			<div style="height : 50px;">
-				<input type="submit" value="20 more" class="submitBT" onclick="additional()">
+				<input type="submit" value="20 more" class="submitBT" onclick="q2func()">
 			</div>
 		</div>
 		<div style="width : 450px; height : 35px;">

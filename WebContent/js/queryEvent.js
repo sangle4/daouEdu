@@ -1,8 +1,8 @@
 var flag = false; //alert check 변수
 
 function q1func() {
-	var input = $('#idField').val();
-	var data = new Object();
+	var input = $('#idField').val(); //사용자 input값 저장
+	var data = new Object(); //data를 담을 객체 생성
 	
 	data.cust_id = input; //key로 똑같이 치환, input 넣을 때 사용
 	
@@ -27,13 +27,13 @@ function q1func() {
 			$("#nickname").html(obj.login_name);
 			$("#gender").html(obj.cust_gender_type);
 			$("#grade").html(obj.cust_grade);
-			if(obj.err_code != 0) {
+			if(obj.err_code != 0) { //에러가 존재하면
 				$("#cust_id").html("");
 				alert("데이터 조회에 실패하였습니다.");
-				flag = true;
+				flag = true; //에러 alert 출력함을 알림
 				$("#idField").val("");
 			}
-		},
+		}, //ajax 통신 오류 발생 시
 		err : function() {
 			alert("요청에 실패하였습니다.")
 		}
@@ -93,10 +93,10 @@ function q2func() {
 					inner += '<td>' + obj.arr[i].cust_grade + '</td></tr>';
 				}
 				tableBody.innerHTML = inner;
-				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
+				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1; //맨 마지막으로 확인한 데이터를 저장
 				$("#index").val(index);
 			},
-			err : function() {
+			err : function() { //ajax 통신 오류 발생 시
 				alert("요청에 실패하였습니다.")
 			}
 		});
@@ -104,9 +104,9 @@ function q2func() {
 }
 
 function q3func() {
-	q1func();
-	sleep(100);
-	q2func();
+	q1func(); //고객 정보 조회 함수 실행
+	sleep(100); //0.1초 딜레이
+	q2func(); //테이블 데이터 조회 함수 실행
 }
 
 function q4func() {
@@ -135,7 +135,7 @@ function q4func() {
 				$('#idField').val("");
 				return 0;
 			}
-			else {
+			else { // 각 필드에 데이터를 채움
 				$("#cust_id2").val(obj.cust_id);
 				$("#cust_name2").val(obj.cust_name);
 				$("#login_id2").val(obj.login_id);
@@ -151,9 +151,7 @@ function q4func() {
 	});
 }
 
-function q4Clear(type) {
-	if(type == 2)
-		$("#idfield").val("");
+function q4Clear(type) { //데이터 클리어 함수
 	$("#cust_id" + type).val("");
 	$("#cust_name" + type).val("");
 	$("#login_id" + type).val("");
@@ -213,7 +211,7 @@ function q5func() {
 				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
 				$("#index").val(index);
 			},
-			err : function() {
+			err : function() { //ajax 통신 오류 발생 시
 				alert("요청에 실패하였습니다.")
 			}
 		});
@@ -292,12 +290,12 @@ function sleep(delay) { //딜레이 함수
 
 function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
 	var data = new Object(); //전송할 데이터 객체 생성
-	data.type_num = signal;
+	data.type_num = signal; //받은 signal을 저장하여 타입을 결정
 	
 	if(signal == 3){ // delete
-		data.cust_id = $('#idField').val();
+		data.cust_id = $('#idField').val(); //delete에는 cust_id만 필요하므로 하나만 저장
 	}
-	else { // insert or update
+	else { // insert or update, 두 쿼리 실행에 필요한 데이터를 필드에서 불러와서 저장
 		data.cust_id = $('#cust_id' + signal).val();
 		data.cust_name = $('#cust_name' + signal).val();
 		data.login_id = $('#login_id' + signal).val();
@@ -309,22 +307,25 @@ function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
 	var jsonData = JSON.stringify(data);
 	
 	var urlText = "http://localhost:8080/com/intern/u03/tr4";
-	
-	$.ajax({
-		async : true,
-		type : "POST",
-		contentType : "application/json; charset=UTF-8",
-		url : urlText,
-		data : jsonData,
-		success : function(dat) {
-			var idx = dat.lastIndexOf('}');
-			var obj = JSON.parse(dat);
-			console.log(obj);
-			if(obj.err_code == 0)
-				alert("성공적으로 수행되었습니다.");
-		},
-		err : function() {
-			alert("요청에 실패하였습니다.")
-		}
-	});
+	if(confirm("정말로 수행하시겠습니까?")){ // 예 버튼 클릭시
+		$.ajax({
+			async : true,
+			type : "POST",
+			contentType : "application/json; charset=UTF-8",
+			url : urlText,
+			data : jsonData,
+			success : function(dat) {
+				var idx = dat.lastIndexOf('}');
+				var obj = JSON.parse(dat);
+				console.log(obj);
+				if(obj.err_code == 0)
+					alert("성공적으로 수행되었습니다.");
+				else
+					alert("요청에 실패하였습니다. \n에러코드 : " + obj.err_code);
+			},
+			err : function() { //ajax 통신 오류 발생 시
+				alert("요청에 실패하였습니다.")
+			}
+		});
+	}
 }

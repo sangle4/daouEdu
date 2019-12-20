@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Q6</title>
 <link rel="stylesheet" type="text/css" href="../../css/result_screen.css">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Ubuntu&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -31,10 +31,10 @@ var index = 0; //more 버튼 클릭 횟수
 			</div>
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div style = "margin : 0px 10px 10px 10px;" class="tabfont">Date</div>
-				<input type="date" id = "dateField" style = "margin : 0px 10px 10px 10px;" value = '2011-09-16' name="userid" class="searchform">
+				<input type="date" id = "dateField" style = "margin : 0px 10px 10px 10px;" value = '2011-09-16' class="searchform">
 			</div>
 			<div class = "user_status">
-				<table class = "status_table" onLoad="" style="width:100%;">
+				<table class = "status_table" style="width:100%;">
 				<tbody>
 					<tr id="dbTR">
 						<td>고객ID</td>
@@ -52,7 +52,7 @@ var index = 0; //more 버튼 클릭 횟수
 			</div>
 		</div>
 		<div>
-			<table class = "dbtable" onLoad="" style="width:750px; border: 1px solid #BEE0FF;">
+			<table class = "dbtable" style="width:750px; border: 1px solid #BEE0FF;">
 				<thead>
 					<tr id="dbTR_DATA" style="background-color: #1E60B5">
 						<th>order_ID</th>
@@ -71,9 +71,6 @@ var index = 0; //more 버튼 클릭 횟수
 					</tr>
 					<% } %>
 				</tbody>
-				<tfoot>
-					<!-- <input type="submit" value="search" class="submitBT" onclick=""> -->
-				</tfoot>
 			</table>
 			<div style="height : 50px;">
 				<input type="submit" value="20 more" class="submitBT" onclick="">
