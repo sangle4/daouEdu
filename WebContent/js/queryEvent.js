@@ -1,3 +1,5 @@
+var flag = false; //alert check 변수
+
 function q1func() {
 	var input = $('#idField').val();
 	var data = new Object();
@@ -28,6 +30,7 @@ function q1func() {
 			if(obj.err_code != 0) {
 				$("#cust_id").html("");
 				alert("데이터 조회에 실패하였습니다.");
+				flag = true;
 				$("#idField").val("");
 			}
 		}
@@ -68,6 +71,11 @@ function q2func() {
 				var obj = JSON.parse(dat);
 				console.log(obj);
 				
+				if(obj.arr.length == 0) {
+					if(flag == false)
+						alert("조회할 데이터가 없습니다.");
+					return 0;
+				}
 				var inner;
 				if(index == input) //첫 데이터 반환 시 html을 초기화
 					inner = "";
@@ -82,7 +90,7 @@ function q2func() {
 					inner += '<td>' + obj.arr[i].cust_grade + '</td></tr>';
 				}
 				tableBody.innerHTML = inner;
-				index = Number(index) + Number(obj.arr.length);
+				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
 				$("#index").val(index);
 			}
 		});
@@ -173,7 +181,7 @@ function q5func() {
 					inner += '<td>' + obj.arr[i].countNum + '</td></tr>';
 				}
 				tableBody.innerHTML = inner;
-				index = Number(index) + Number(obj.arr.length);
+				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
 				$("#index").val(index);
 			}
 		});
@@ -235,7 +243,7 @@ function q6func() {
 					inner += '<td>' + obj.arr[i].order_status + '</td></tr>';
 				}
 				tableBody.innerHTML = inner;
-				index = Number(index) + Number(obj.arr.length);
+				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
 				$("#index").val(index);
 			}
 		});
