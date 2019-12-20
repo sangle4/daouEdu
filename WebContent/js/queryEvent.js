@@ -134,7 +134,13 @@ function q4func() {
 			if(obj.err_code != 0) {
 				alert("조회할 데이터가 없습니다.");
 				$("#cust_id2").val("");
+				$("#cust_name2").val("");
 				$('#idField').val("");
+				$("#login_id2").val("");
+				$("#login_pswd2").val("");
+				$("#login_name2").val("");
+				$("#cust_gender_type2").val("");
+				$("#cust_grade2").val("");
 				return 0;
 			}
 			else { // 각 필드에 데이터를 채움
@@ -234,6 +240,7 @@ function q6final() {
 
 function q6func() {
 	var input = $('#idField').val(); //입력 필드 데이터를 불러옴
+	var temp; //출력된 데이터 order_id 저장 변수
 	if(index == 0) {//처음 호출 시 인덱스 그대로 입력
 		index = input;
 		$('#first').val(input); //검색 데이터 저장 공간에 저장
@@ -245,12 +252,14 @@ function q6func() {
 	
 	if(input != $('#first').val()){ //검색한 데이터와 다른 데이터 검색 시
 		index = 0; //인덱스를 초기화하고 함수 다시 실행
+		$('#orderTemp').val(0);
 		q6func();
 	}
 	else{ //이어서 요청하는 경우
 		var order_dt = $('#dateField').val();
 		data.cust_id = index; //key로 똑같이 치환, input 넣을 때 사용
 		data.order_dt = order_dt;
+		data.order_id = $('#orderTemp').val();
 		
 		var jsonData = JSON.stringify(data);
 		
@@ -293,7 +302,9 @@ function q6func() {
 				}
 				tableBody.innerHTML = inner;
 				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
+				temp = Number(obj.arr[obj.arr.length-1].order_id) + 1;
 				$("#index").val(index);
+				$("#orderTemp").val(temp);
 			},
 			err : function() {
 				alert("요청에 실패하였습니다.")

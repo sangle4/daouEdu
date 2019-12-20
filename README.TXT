@@ -14,7 +14,7 @@ err_msg : "message"
 if input more than 200,000 need to fix error
 
 FIX :
-q6 : send order_id to click action '20more'
+q6 : send order_id to click action '20more' -> fixed
 q1, q4 if search cust_id over 200,000 -> no data but cust_id table filled, need to fix -> fixed
 q2 : when search end of the table data, 
 if push search button again it takes one more data end of the table -> fixed

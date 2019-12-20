@@ -13,12 +13,13 @@
 </head>
 
 <script>
-var index = 0; //more 버튼 클릭 횟수
+var index = 0; //more 버튼 클릭 체크
 </script>
 
 <body>
 	<input type="hidden" id="index" value="0">
 	<input type="hidden" id="first" value="0">
+	<input type="hidden" id ="orderTemp" value="0"> 
 	<div class="main_div">
 		<div class="result_tab">
 			<div class="userState">
@@ -31,7 +32,7 @@ var index = 0; //more 버튼 클릭 횟수
 			</div>
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div style = "margin : 0px 10px 10px 10px;" class="tabfont">Date</div>
-				<input type="date" id = "dateField" style = "margin : 0px 10px 10px 10px;" value = '2011-09-16' class="searchform">
+				<input type="date" id = "dateField" style = "margin : 0px 10px 10px 10px;" value = '2019-01-01' class="searchform">
 			</div>
 			<div class = "user_status">
 				<table class = "status_table" style="width:100%;">
