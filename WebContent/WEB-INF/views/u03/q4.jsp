@@ -30,13 +30,14 @@
 					</p>
 					<p>
 						접속별명<input type="text" class="input_box" id="login_name1"> 
-						<span style="float : right;">성별<input type="text" class="input_box" id="cust_gender_type1"></span>
+						<span style="float : right;">성별<input onKeyup="this.value=this.value.replace(/[^1-2]/g,'');" type="text" class="input_box" id="cust_gender_type1"></span>
 					</p>
 					<p>
-					고객등급<input type="text" class="input_box" id="cust_grade1"> 
+					고객등급<input onKeyup="this.value=this.value.replace(/[^1-9]/g,'');" type="text" class="input_box" id="cust_grade1"> 
 					</p>
 				</form>
 			</div>
+			<input type="submit" style="margin : 0px 10px 10px 10px; float : left;" value="Clear" class="submitBT" onclick="q4Clear(1)">
 			<input type="submit" style="margin : 0px 10px 10px 10px;" value="register" class="submitBT" onclick="crudFunc(1)">
 		</div>
 		
@@ -48,7 +49,7 @@
 			<div class = "user_status">
 			<div style = "border-bottom : 1px solid #BEE0FF;">
 				<div class="tabfont" style = "width : 130px;font-size : 22px;">Customer ID</div>
-				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="userid" class="searchform" id = "idField">
+				<input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" class="searchform" id = "idField">
 				<input type="submit" value="search" class="submitBT" onclick="q4func()"> 
 			</div>
 				<p>
@@ -61,12 +62,13 @@
 				</p>
 				<p>
 					접속별명<input type="text" class="input_box" id="login_name2"> 
-					<span style="float : right;">성별<input type="text" class="input_box" id="cust_gender_type2"></span>
+					<span style="float : right;">성별<input onKeyup="this.value=this.value.replace(/[^1-2]/g,'');" type="text" class="input_box" id="cust_gender_type2"></span>
 				</p>
 				<p>
-					고객등급<input type="text" class="input_box" id="cust_grade2"> 
+					고객등급<input onKeyup="this.value=this.value.replace(/[^1-9]/g,'');" type="text" class="input_box" id="cust_grade2"> 
 				</p>
 			</div>
+			<input type="submit" style="margin : 0px 10px 10px 10px; float : left;" value="Clear" class="submitBT" onclick="q4Clear(2)">
 			<input type="submit" style="color : white; background-color : #1E60B5; margin : 0px 10px 10px 10px;" value="Delete" class="submitBT" onclick="crudFunc(3)">
 			<input type="submit" style="margin : 0px 10px 10px 10px;" value="Modify" class="submitBT" onclick="crudFunc(2)">
 		</div>

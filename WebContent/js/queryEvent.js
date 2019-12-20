@@ -33,6 +33,9 @@ function q1func() {
 				flag = true;
 				$("#idField").val("");
 			}
+		},
+		err : function() {
+			alert("요청에 실패하였습니다.")
 		}
 	});
 }
@@ -92,6 +95,9 @@ function q2func() {
 				tableBody.innerHTML = inner;
 				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
 				$("#index").val(index);
+			},
+			err : function() {
+				alert("요청에 실패하였습니다.")
 			}
 		});
 	}
@@ -123,15 +129,38 @@ function q4func() {
 			var idx = dat.lastIndexOf('}');
 			var obj = JSON.parse(dat);
 			console.log(obj);
-			$("#cust_id2").val(obj.cust_id);
-			$("#cust_name2").val(obj.cust_name);
-			$("#login_id2").val(obj.login_id);
-			$("#login_pswd2").val(obj.login_pswd);
-			$("#login_name2").val(obj.login_name);
-			$("#cust_gender_type2").val(obj.cust_gender_type);
-			$("#cust_grade2").val(obj.cust_grade);
+			if(obj.err_code != 0) {
+				alert("조회할 데이터가 없습니다.");
+				$("#cust_id2").val("");
+				$('#idField').val("");
+				return 0;
+			}
+			else {
+				$("#cust_id2").val(obj.cust_id);
+				$("#cust_name2").val(obj.cust_name);
+				$("#login_id2").val(obj.login_id);
+				$("#login_pswd2").val(obj.login_pswd);
+				$("#login_name2").val(obj.login_name);
+				$("#cust_gender_type2").val(obj.cust_gender_type);
+				$("#cust_grade2").val(obj.cust_grade);
+			}
+		},
+		err : function() {
+			alert("요청에 실패하였습니다.")
 		}
 	});
+}
+
+function q4Clear(type) {
+	if(type == 2)
+		$("#idfield").val("");
+	$("#cust_id" + type).val("");
+	$("#cust_name" + type).val("");
+	$("#login_id" + type).val("");
+	$("#login_pswd" + type).val("");
+	$("#login_name" + type).val("");
+	$("#cust_gender_type" + type).val("");
+	$("#cust_grade" + type).val("");
 }
 
 function q5func() {
@@ -183,6 +212,9 @@ function q5func() {
 				tableBody.innerHTML = inner;
 				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
 				$("#index").val(index);
+			},
+			err : function() {
+				alert("요청에 실패하였습니다.")
 			}
 		});
 	}
@@ -245,14 +277,17 @@ function q6func() {
 				tableBody.innerHTML = inner;
 				index = Number(obj.arr[obj.arr.length-1].cust_id) + 1;
 				$("#index").val(index);
+			},
+			err : function() {
+				alert("요청에 실패하였습니다.")
 			}
 		});
 	}
 }
 
-function sleep(delay) {
-	var start = new Date().getTime();
-	while(new Date().getTime() < start + delay);
+function sleep(delay) { //딜레이 함수
+	var start = new Date().getTime(); //현재 시간을 받아와서
+	while(new Date().getTime() < start + delay); //현재시각에 딜레이 시간을 추가한 만큼 대기
 }
 
 function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
@@ -285,6 +320,11 @@ function crudFunc(signal) { // 1 : register, 2 : modify, 3 : delete
 			var idx = dat.lastIndexOf('}');
 			var obj = JSON.parse(dat);
 			console.log(obj);
+			if(obj.err_code == 0)
+				alert("성공적으로 수행되었습니다.");
+		},
+		err : function() {
+			alert("요청에 실패하였습니다.")
 		}
 	});
 }
